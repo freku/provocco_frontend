@@ -13,16 +13,28 @@ const { logout } = useAuthBasic()
       <RouterLink :to="{ name: 'home' }" class="mr-6">Home</RouterLink>
       <RouterLink to="/about" class="mr-6">About</RouterLink>
 
-      <RouterLink v-if="!userStore.isLoggedIn" :to="{ name: 'login' }" class="mr-6"
+      <RouterLink
+        data-testid="login"
+        v-if="!userStore.isLoggedIn"
+        :to="{ name: 'login' }"
+        class="mr-6"
         >Login</RouterLink
       >
-      <a v-else href="#" @click="logout" class="cursor-pointer mr-6">Logout</a>
+      <a data-testid="logout" v-else href="#" @click="logout" class="cursor-pointer mr-6">Logout</a>
 
-      <RouterLink :to="{ name: 'profile' }" v-if="userStore.isLoggedIn" class="mr-6"
+      <RouterLink
+        data-testid="profile"
+        :to="{ name: 'profile' }"
+        v-if="userStore.isLoggedIn"
+        class="mr-6"
         >Profile ({{ userStore.user.name }})</RouterLink
       >
 
-      <RouterLink v-if="!userStore.isLoggedIn" :to="{ name: 'register' }" class="mr-6"
+      <RouterLink
+        data-testid="register"
+        v-if="!userStore.isLoggedIn"
+        :to="{ name: 'register' }"
+        class="mr-6"
         >Register</RouterLink
       >
     </div>
