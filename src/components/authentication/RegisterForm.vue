@@ -1,9 +1,9 @@
 <script setup>
-import { useAuth } from '@/composables/auth'
+import { useAuthRegister } from '@/composables/auth/register'
 import Button from '@/components/basic/Button.vue'
 import Input from '@/components/basic/Input.vue'
 
-const { submitRegister, registerForm } = useAuth()
+const { submitRegister, registerForm } = useAuthRegister()
 </script>
 
 <template>

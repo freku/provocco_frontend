@@ -1,13 +1,12 @@
 <script setup>
 import { RouterView, useRoute } from 'vue-router'
-import { useAuth } from '@/composables/auth'
+import { useAuthBasic } from '@/composables/auth/basic'
 import { watch } from 'vue'
 import Navigation from '@/components/Navigation.vue'
 
-const { getUser } = useAuth()
+const { getUser } = useAuthBasic()
 const route = useRoute()
 
-// TODO: move to beforeRoute
 watch(
   () => route.params,
   async () => {

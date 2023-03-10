@@ -1,11 +1,11 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { watch } from 'vue'
-import { useAuth } from '@/composables/auth'
+import { useAuthVerify } from '@/composables/auth/verify'
 
 const route = useRoute()
 
-const { verifyEmail } = useAuth()
+const { verifyEmail } = useAuthVerify()
 
 watch(
   () => route.query.url,

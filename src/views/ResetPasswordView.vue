@@ -1,5 +1,5 @@
 <script setup>
-import { useAuth } from '@/composables/auth'
+import { useAuthPassword } from '@/composables/auth/password'
 import Button from '@/components/basic/Button.vue'
 import Input from '@/components/basic/Input.vue'
 import { watch } from 'vue'
@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const { resetPasswordForm, submitResetPassword } = useAuth()
+const { resetPasswordForm, submitResetPassword } = useAuthPassword()
 
 watch(
   () => route.query.token,

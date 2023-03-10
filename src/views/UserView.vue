@@ -1,9 +1,9 @@
 <script setup>
 import { useUserStore } from '@/stores/user'
-import { useAuth } from '@/composables/auth'
+import { useAuthVerify } from '@/composables/auth/verify'
 
 const userStore = useUserStore()
-const { sendEmailVerificationNotification, isSendingVerifyEmail } = useAuth()
+const { sendEmailVerificationNotification, isSendingVerifyEmail } = useAuthVerify()
 
 function sendEmailVerification() {
   return !isSendingVerifyEmail.value ? sendEmailVerificationNotification() : undefined

@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useUserStore } from '@/stores/user'
-import { useAuth } from '@/composables/auth'
+import { useAuthBasic } from '@/composables/auth/basic'
 
 const userStore = useUserStore()
-const { logout } = useAuth()
+const { logout } = useAuthBasic()
 </script>
 
 <template>
